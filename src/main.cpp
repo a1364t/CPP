@@ -10,8 +10,8 @@ int main(int arg_count, char *args[]) {
         simplelist.mainList = data.read();
         simplelist.find_userList();
         simplelist.print_menu();
-        //data.write(simplelist.list);
-        //data.read();
+        data.write(simplelist.mainList);
+        
     }
     else {
         cout << "User name not supplied ... Exiting the program" << endl;
