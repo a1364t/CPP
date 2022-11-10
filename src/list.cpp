@@ -1,28 +1,6 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+#include "include/list.h"
 
-
-void print_menu(string name);
-void print_list();
-void add_item();
-void delete_item();
-
-vector<string> list;
-string name;
-
-int main(int arg_count, char *args[]) {
-    if ( arg_count > 1 ) {
-        name = string(args[1]);
-        print_menu(name);
-    }
-    else {
-        cout << "User name not supplied ... Exiting the program" << endl;
-    }
-    return 0;
-}
-
-void print_menu(string name) {
+void List::print_menu() {
     int choice;
 
     cout << "**********************************************\n";
@@ -51,7 +29,7 @@ void print_menu(string name) {
     }
 }
 
-void add_item() {
+void List::add_item() {
     cout << "\n\n\n\n\n\n\n\n\n";
     cout << "***** Add Item ******\n";
     cout << "Type in an item and press Enter: ";
@@ -64,15 +42,15 @@ void add_item() {
     cout << "Successfully added an item to the list \n\n\n";
     cin.clear();
 
-    print_menu(name);
+    print_menu();
 }
 
-void delete_item() {
+void List::delete_item() {
     cout <<"**** Delete Item ****\n";
     cout << "Selecet an item index number to delete\n";
 
     if (list.size()){
-        for ( int i=0; i < list.size(); i++){
+        for ( int i=0; i < (int)list.size(); i++){
             cout << i << ": " << list[i] << "\n";
         }
     }
@@ -80,14 +58,14 @@ void delete_item() {
         cout << "No items to delete. \n";
     }
 
-    print_menu(name);
+    print_menu();
 }
 
-void print_list(){
+void List::print_list(){
     cout << "\n\n\n\n\n\n\n\n\n";
     cout << "**** Printing List **** \n";
 
-    for (int list_index=0; list_index < list.size(); list_index++){
+    for (int list_index=0; list_index < (int)list.size(); list_index++){
         cout << " * " << list[list_index] << "\n";
     }
 
@@ -96,10 +74,9 @@ void print_list(){
     cin >> choice;
 
     if (choice == 'M' || choice == 'm'){
-        print_menu(name);
+        print_menu();
     }
     else {
         cout << "Invalid Choice. Quitting.. \n";
     }
 }
-

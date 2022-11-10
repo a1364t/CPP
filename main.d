@@ -1,1 +1,1 @@
-obj/main.o: /Users/alireza/Projects/C++_Practice/main.cpp
+obj/main.o: src/main.cpp src/include/list.h

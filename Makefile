@@ -8,9 +8,9 @@ CXXFLAGS = -std=c++11 -Wall
 LDFLAGS = 
 
 # Makefile settings - Can be customized.
-APPNAME = SimpleApp
+APPNAME = Simplelist
 EXT = .cpp
-SRCDIR = /Users/alireza/Projects/C++_Practice
+SRCDIR = src
 OBJDIR = obj
 
 ############## Do not change anything from here downwards! #############
